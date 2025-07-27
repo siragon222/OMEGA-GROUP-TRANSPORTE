@@ -1,0 +1,132 @@
+
+.portada-slider-container {
+    position: relative;
+    width: 100vw; /* Use 100vw for full viewport width */
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('./Carretera.png');
+    background-color: var(--color-black); 
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .portada-slider-container {
+        height: auto; /* Allow height to adjust based on content on mobile */
+        min-height: unset; /* Remove minimum height to allow flexible sizing */
+        justify-content: center; /* Center single image on mobile */
+        padding-bottom: 90px; /* Increased padding to the bottom */
+    }
+    .slider-title {
+        font-size: var(--font-size-lg); /* Adjust font size for smaller screens */
+        top: 45%; /* Adjust position for smaller screens */
+    }
+
+    /* Mobile carousel styles */
+    .image-item-wrapper {
+        width: 80vw !important; /* Force a consistent square width on mobile */
+        height: 80vw !important; /* Force a consistent square height on mobile */
+        margin-right: 0; /* Ensure no horizontal separation */
+        padding: 0; /* Ensure no padding */
+        transform: skewX(0deg); /* Remove any skew on mobile */
+        animation: none; /* Remove desktop animation for mobile */
+    }
+
+    .image-item-wrapper.active-mobile {
+        animation: mobileImageFadeIn 1s ease-out forwards; /* Mobile specific fade in */
+    }
+
+    .image-item-wrapper:not(.active-mobile) {
+        display: none !important; /* Hide non-active images */
+    }
+
+    .image-backdrop {
+        height: 80%; /* Increased backdrop height for mobile */
+        transform: skewX(0deg); /* Remove any skew on mobile backdrop */
+        animation: mobileBackdropFadeInMove 1s ease-out forwards; /* Mobile specific fade and move */
+    }
+
+    .portada-slider-image {
+        width: 100%; /* Ensure image fills its wrapper */
+        height: 100%; /* Ensure image fills its wrapper */
+        transform: skewX(0deg); /* Remove any skew on mobile image */
+    }
+}
+
+@keyframes mobileImageFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes mobileBackdropFadeInMove {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) skewX(0deg); /* Start lower */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) skewX(0deg); /* End at original position */
+    }
+}
+
+@media (max-width: 480px) {
+    .portada-slider-container {
+        height: 300px; /* Further adjust height for very small screens */
+    }
+    .slider-title {
+        font-size: var(--font-size-md); /* Adjust font size for very small screens */
+        top: 50%; /* Further adjust position for very small screens */
+    }
+}
+
+.slider-title {
+    position: absolute;
+    top: 87%; /* Based on previous user adjustment for the box */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    color: var(--color-white); /* Use global black color */
+    font-family: var(--font-family-roboto); /* Use global font family */
+    font-size: var(--font-size-xl); /* Use global extra large font size */
+    font-weight: 500; /* Use a medium font weight for the title */
+    text-align: center;
+    width: 90%; /* Based on previous user adjustment for the box */
+    /* Ensure text wraps if needed */
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+/* Responsive adjustments for the overlay box */
+@media (max-width: 768px) {
+    .overlay-box {
+        width: 90%;
+        height: 70%;
+    }
+}
+
+@media (max-width: 480px) {
+    .overlay-box {
+        width: 95%;
+        height: 80%;
+    }
+}
+
+.thin-text {
+  font-weight: 300;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.bold-text {
+  font-weight: 700;
+  display: block;
+}

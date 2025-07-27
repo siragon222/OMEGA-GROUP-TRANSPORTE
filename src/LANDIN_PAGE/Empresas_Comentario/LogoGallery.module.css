@@ -1,0 +1,109 @@
+.logoGallery {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Estilo para versión de escritorio con 2 columnas */
+.desktop {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.logoContainer {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  filter: brightness(0) invert(1); /* Hace que los logos sean blancos */
+  opacity: 0.5;
+  width: 120px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 3px solid transparent;
+  padding-left: 10px;
+}
+
+.logoContainer.active {
+  opacity: 1;
+  border-left: 3px solid var(--color-white);
+}
+
+.logoContainer:hover {
+  opacity: 0.8;
+  transform: translateX(5px);
+}
+
+.logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Versión móvil */
+.logoGallery.mobile {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.mobile .logoContainer {
+  border-left: none;
+  border-bottom: 3px solid transparent;
+  padding-left: 0;
+  padding-bottom: 5px;
+}
+
+.mobile .logoContainer.active {
+  border-bottom: 3px solid var(--color-white);
+}
+
+.mobile .logoContainer:hover {
+  transform: translateY(-5px);
+}
+
+/* Animación para el logo activo en móvil */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.mobile .logoContainer.active {
+  animation: pulse 2s infinite;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .logoContainer {
+    width: 100px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .logoGallery {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .logoContainer {
+    width: 90px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logoGallery.mobile {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .logoGallery.mobile .logoContainer:not(.active) {
+    display: none;
+  }
+}

@@ -1,0 +1,56 @@
+/* Beneficios.css */
+
+.beneficios-section {
+  background-color: white;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding: 4rem 0; /* Aumentar padding vertical */
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.beneficios-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; /* Añadir padding lateral en móviles */
+}
+
+@media (max-width: 768px) {
+  .beneficios-section {
+    padding: 2rem 0;
+  }
+  
+  .beneficios-container {
+    padding: 0 15px;
+  }
+}
+
+.beneficios-title {
+  font-size: var(--font-size-xl);
+  margin-bottom: 30px;
+  color: var(--color-black); /* Example usage of global color */
+}
+
+.beneficios-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns for larger screens */
+  gap: 20px;
+  justify-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .beneficios-section {
+    padding: 20px 15px;
+  }
+
+  .beneficios-title {
+    font-size: var(--font-size-lg);
+    margin-bottom: 20px;
+  }
+
+  .beneficios-container {
+    grid-template-columns: 1fr;
+  }
+}

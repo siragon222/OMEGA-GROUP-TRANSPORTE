@@ -1,0 +1,119 @@
+.serviciosContainer {
+  padding: 2rem;
+  width: 100%;
+  /* Eliminado max-width y margin: 0 auto para que el fondo sea de extremo a extremo */
+  background-color: var(--color-white);
+}
+
+.serviciosGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Ajustado minmax para mejor responsividad */
+  gap: 2rem;
+  justify-items: center;
+  max-width: 1200px; /* Añadido max-width aquí para centrar el contenido de la grilla */
+  margin: 0 auto; /* Centrar la grilla */
+}
+
+.card {
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 350px; /* Mantener un max-width para las tarjetas individuales */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.card.expanded {
+  border: 2px solid var(--color-black);
+  padding: 1rem;
+}
+
+.cardTitle {
+  margin: 0.5rem 0; /* Reducir espacio inferior */
+}
+
+.cardDescription.expanded {
+  margin: 0.5rem 0 1rem 0; /* Ajuste vertical */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.cardImage {
+  width: 100%;
+  height: auto; /* Cambiado de 200px a auto para permitir que la altura se ajuste */
+  max-height: 200px; /* Establecer una altura máxima para evitar imágenes excesivamente grandes */
+  object-fit: contain; /* Cambiado de cover a contain para evitar recortes */
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.cardTitle {
+  font-size: var(--font-size-lg);
+  font-family: var(--font-family-roboto);
+  margin: 1rem 0;
+  text-align: center;
+  color: var(--color-black);
+}
+
+.cardDescription {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+  text-align: center;
+  margin: 0;
+  color: var(--color-black);
+  font-size: var(--font-size-md);
+}
+
+.cardDescription.expanded {
+  max-height: 200px;
+  opacity: 1;
+  margin: 1rem 0;
+}
+
+.cardButton {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: var(--font-size-md);
+  font-weight: 500;
+  font-family: var(--font-family-roboto);
+  background-color: #1a1a1a;
+  color: var(--color-white);
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+.cardButton:hover {
+  border-color: #646cff;
+}
+
+.cardButton:focus,
+.cardButton:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (max-width: 768px) {
+  .serviciosGrid {
+    grid-template-columns: 1fr;
+    padding: 0 1rem; /* Añadido padding para evitar que las tarjetas toquen los bordes en móvil */
+  }
+  
+  .card {
+    max-width: 90%; /* Ajustado max-width para que las tarjetas no sean demasiado anchas en móvil */
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .cardButton {
+    background-color: #f9f9f9;
+    color: var(--color-black);
+  }
+}

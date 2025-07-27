@@ -1,0 +1,74 @@
+.whatsappButton {
+  position: fixed;
+  bottom: 40px;  /* Distancia desde la parte inferior */
+  right: 40px;   /* Distancia desde la derecha */
+  background-color: #25d366;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.whatsappButton:hover {
+  transform: scale(1.1) translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  fill: white;
+}
+
+/* Animación de pulso */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.whatsappButton {
+  animation: pulse 2s infinite;
+}
+.whatsappButton {
+  position: fixed;
+  bottom: 40px;  /* Distancia desde la parte inferior */
+  right: 40px;   /* Distancia desde la derecha */
+  background-color: #25d366;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.whatsappButton:hover {
+  transform: scale(1.1) translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  fill: white;
+}
+
+/* Animación de pulso */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.whatsappButton {
+  animation: pulse 2s infinite;
+}

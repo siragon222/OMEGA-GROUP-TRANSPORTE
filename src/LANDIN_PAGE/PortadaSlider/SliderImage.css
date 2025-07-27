@@ -1,0 +1,48 @@
+.image-item-wrapper {
+    position: relative;
+    width: 20%; /* Default for desktop */
+    height: 100%; /* Ensure wrapper takes full height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    padding: 0 10px; /* Default for desktop */
+    transform: skewX(-20deg); /* Default for desktop */
+    margin-right: 20px; /* Default for desktop */
+    /* Removed default opacity and animation, will be applied conditionally */
+}
+
+.image-item-wrapper.desktop-animate {
+    opacity: 0;
+    animation: fadeInSlideUp 1.6s forwards;
+}
+
+.image-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60%; /* From top to middle of the wrapper, which is 50% of the container */
+    z-index: 0; /* Behind the image */
+    transform: skewX(0deg); /* Counter-skew to perfectly straighten content */
+}
+
+.portada-slider-image {
+    width: 100%; /* Make image fill its wrapper */
+    height: 100%; /* Ensure image takes full height of the wrapper */
+    object-fit: contain; /* Ensure the whole image is visible, scaling down if needed */
+    position: relative; /* To ensure it's above the backdrop */
+    z-index: 1; /* Above the backdrop */
+    transform: skewX(20deg); /* Counter-skew the image to perfectly straighten content */
+}
+
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px) skewX(-20deg); /* Start lower and with skew */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) skewX(-20deg); /* End at original position with skew */
+    }
+} 

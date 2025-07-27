@@ -1,0 +1,107 @@
+/* Card_Beneficios.css */
+
+.card-beneficios {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-beneficios::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transform: rotate(45deg);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) rotate(45deg); }
+}
+
+.card-beneficios {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 20px;
+  margin: 10px;
+  border-radius: 8px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.card-beneficios.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-image {
+  width: 80px; /* Adjust as needed */
+  height: 80px; /* Adjust as needed */
+  margin-bottom: 15px;
+}
+
+.card-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: var(--font-size-lg); /* Using global font size */
+}
+
+.card-description {
+  font-size: var(--font-size-md); /* Using global font size */
+  line-height: 1.5;
+}
+
+/* Responsiveness for mobile */
+@media (max-width: 768px) {
+  .card-beneficios {
+    padding: 15px;
+    margin: 8px;
+  }
+
+  .card-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .card-title {
+    font-size: var(--font-size-md);
+  }
+
+  .card-description {
+    font-size: var(--font-size-sm);
+  }
+}
+
+/* Responsiveness for desktop (optional, often default styles work for desktop) */
+@media (min-width: 769px) {
+  .card-beneficios {
+    max-width: 300px; /* Example max-width for desktop cards */
+  }
+}
+
+.card-beneficios {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-origin: center;
+  position: relative;
+  z-index: 1;
+}
+
+.card-beneficios:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Mantener la animación de brillo existente */
+.card-beneficios::after {
+  z-index: -1;
+}
