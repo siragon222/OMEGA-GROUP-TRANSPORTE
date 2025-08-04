@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Header.css';
+import logoOmega from '../../assets/logo_omega.svg';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -15,7 +16,7 @@ const Header = () => {
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <img 
-        src="/src/assets/logo_omega.svg"
+        src={logoOmega}
         alt="Logo Omega Transportes" 
         className="logo"
       />

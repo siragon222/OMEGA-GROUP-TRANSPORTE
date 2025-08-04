@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import './SliderImage.css';
 
-const SliderImage = ({ image, alt, backdropColor, index, className }) => {
+const SliderImage = ({ image, alt, backdropImage, index, className }) => {
     const itemRef = useRef(null);
 
     useEffect(() => {
@@ -17,7 +17,11 @@ const SliderImage = ({ image, alt, backdropColor, index, className }) => {
 
     return (
         <div className={`image-item-wrapper ${className}`} ref={itemRef}>
-            <div className="image-backdrop" style={{ backgroundColor: backdropColor }}></div>
+            <div className="image-backdrop" style={{ 
+                backgroundImage: `url(${backdropImage})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+            }}></div>
             <img
                 src={image}
                 alt={alt}
@@ -27,4 +31,4 @@ const SliderImage = ({ image, alt, backdropColor, index, className }) => {
     );
 };
 
-export default SliderImage; 
+export default SliderImage;

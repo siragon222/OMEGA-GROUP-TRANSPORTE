@@ -6,16 +6,21 @@ import TestimonialsSection from './Empresas_Comentario/TestimonialsSection';
 import ServiciosDeTransporte from './Servicio_de_Transporte/ServiciosDeTransporte';
 import VideoPlayer from './Video/VideoPlayer';
 import FormularioSection from './Formulario/FormularioSection';
+import videoGPS from '../assets/video_GPS.mp4';
 
 function Landin_Page() {
   return (
     <div className="landing-page-container">
-      {/* You can add other components here later */}
       <PortadaSlider />
       <Beneficios />
       <TestimonialsSection />
       <ServiciosDeTransporte />
-      <VideoPlayer src="/src/assets/video_GPS.mp4" type="video/mp4" />
+      <VideoPlayer 
+        src={videoGPS} 
+        type="video/mp4" 
+        autoplay={true}
+        muted={true}
+      />
       <FormularioSection />
     </div>
   );

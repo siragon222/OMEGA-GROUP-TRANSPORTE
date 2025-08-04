@@ -7,10 +7,16 @@ import car_3 from './car_3.png';
 import car_4 from './car_4.png';
 import car_5 from './car_5.png';
 import Carretera from './Carretera.png';
+// Importar las nuevas imágenes de fondo
+import bg_1 from './bg_1.jpg';
+import bg_2 from './bg_2.jpg';
+import bg_3 from './bg_3.jpg';
+import bg_4 from './bg_4.jpg';
+import bg_5 from './bg_5.jpg';
 
 const PortadaSlider = () => {
     const images = [car_1, car_2, car_3, car_4, car_5];
-    const backdropColors = ['#ffadad', '#ffd6a5', '#fdffb6', '#caffbf', '#9bf6ff']; // Example colors
+    const backdropImages = [bg_1, bg_2, bg_3, bg_4, bg_5]; // Reemplazamos los colores por imágenes
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
     const [currentMobileImageIndex, setCurrentMobileImageIndex] = useState(0);
 
@@ -79,7 +85,7 @@ const PortadaSlider = () => {
                     key={index} 
                     image={image} 
                     alt={`Car ${index + 1}`} 
-                    backdropColor={backdropColors[index]} 
+                    backdropImage={backdropImages[index]} // Pasamos la imagen de fondo en lugar del color
                     index={index}
                     className={isMobile 
                         ? (index === currentMobileImageIndex ? 'active-mobile' : '') 

@@ -1,7 +1,8 @@
 import React, { useRef, useEffect } from 'react';
 import styles from './VideoPlayer.module.css';
+import videoGPS from '../../assets/video_GPS.mp4';
 
-const VideoPlayer = ({ src, type }) => {
+const VideoPlayer = ({ src = videoGPS, type = 'video/mp4' }) => {
   const videoRef = useRef(null);
 
   useEffect(() => {
