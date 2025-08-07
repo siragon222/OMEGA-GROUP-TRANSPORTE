@@ -25,6 +25,7 @@
     height: 60%; /* From top to middle of the wrapper, which is 50% of the container */
     z-index: 0; /* Behind the image */
     transform: skewX(0deg); /* Counter-skew to perfectly straighten content */
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
 }
 
 .portada-slider-image {
@@ -39,10 +40,10 @@
 @keyframes fadeInSlideUp {
     from {
         opacity: 0;
-        transform: translateY(50px) skewX(-20deg); /* Start lower and with skew */
+        transform: translateY(-80px) skewX(-20deg); /* Start lower and with skew */
     }
     to {
         opacity: 1;
-        transform: translateY(0) skewX(-20deg); /* End at original position with skew */
+        transform: translateY(-0) skewX(-20deg); /* End at original position with skew */
     }
-} 
+}

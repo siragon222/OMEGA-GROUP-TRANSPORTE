@@ -1,7 +1,7 @@
 .formulario-section {
   width: 100%;
-  background-color: #ffffff;
-  padding: 4rem 2rem;
+  background-color: var(--color-white);
+  padding: 2rem 1rem;
   overflow: hidden;
 }
 
@@ -19,63 +19,196 @@
   opacity: 0;
   transform: translateX(-100px);
   transition: all 0.8s ease-out;
+  display: flex; /* Añadido para centrar */
+  justify-content: center; /* Añadido para centrar */
 }
 
 .image-container img {
-  width: 100%;
+  width: auto; /* Ajustado para mantener la proporción */
   height: auto;
-  max-width: 600px;
+  max-width: 100%; /* Asegura que no se desborde del contenedor */
+  max-height: 700px;
   display: block;
 }
 
-.button-container {
+.form-content {
   flex: 1;
-  display: flex;
-  justify-content: center;
   opacity: 0;
   transform: translateX(100px);
   transition: all 0.8s ease-out;
+  padding: 1.5rem;
+  background-color: var(--color-white);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+}
+
+.contact-form .form-group {
+  margin-bottom: 1.25rem;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--color-black);
+  font-size: var(--font-size-md);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 16px; /* Tamaño fijo para evitar zoom en iOS */
+  transition: border-color 0.3s ease;
+  -webkit-appearance: none; /* Elimina estilos por defecto en iOS */
+  appearance: none;
+}
+
+.contact-form input:focus {
+  border-color: var(--color-red);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.1);
+}
+
+.contact-form .checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+}
+
+.contact-form .checkbox-group input[type="checkbox"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.25rem;
+}
+
+.contact-form .checkbox-group label {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
 }
 
 .formulario-button {
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
+  width: 100%;
+  padding: 1rem;
+  font-size: var(--font-size-md);
   font-weight: bold;
-  background-color: #000000;
-  color: #ffffff;
+  background-color: var(--color-black);
+  color: var(--color-white);
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: transform 0.3s ease, background-color 0.3s ease;
+  -webkit-tap-highlight-color: transparent; /* Elimina el highlight al tocar en móviles */
 }
 
-.formulario-button:hover {
-  transform: scale(1.05);
-  background-color: #000000;
+.formulario-button:hover:not(:disabled) {
+  transform: scale(1.02);
+}
+
+.formulario-button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.formulario-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.submit-message {
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: bold;
+  color: var(--color-black);
+  font-size: 0.9rem;
 }
 
 /* Animation classes */
 .formulario-container.visible .image-container,
-.formulario-container.visible .button-container {
+.formulario-container.visible .form-content {
   opacity: 1;
   transform: translateX(0);
 }
 
 /* Responsive styles */
 @media (max-width: 768px) {
+  .formulario-section {
+    padding: 2rem 1rem;
+  }
+
   .formulario-container {
     flex-direction: column;
-    text-align: center;
+    gap: 1.5rem;
   }
 
   .image-container,
-  .button-container {
+  .form-content {
     flex: none;
     width: 100%;
+    max-width: 100%;
+  }
+
+  .image-container {
+    transform: translateY(-50px);
+  }
+
+  .form-content {
+    transform: translateY(50px);
+    padding: 1.25rem;
+  }
+
+  .formulario-container.visible .image-container {
+    transform: translateY(0);
+  }
+
+  .formulario-container.visible .form-content {
+    transform: translateY(0);
+  }
+
+  .image-container img {
+    max-height: 450px; /* Imagen más pequeña en móvil */
+  }
+
+  .contact-form .form-group {
+    margin-bottom: 1rem;
+  }
+
+  .contact-form label {
+    font-size: 0.95rem;
   }
 
   .formulario-button {
-    width: 100%;
-    max-width: 300px;
+    padding: 0.875rem;
+    font-size: 1rem;
+  }
+}
+
+/* Ajustes para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .formulario-section {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .form-content {
+    padding: 1rem;
+  }
+
+  .contact-form .checkbox-group {
+    gap: 0.5rem;
+  }
+
+  .contact-form .checkbox-group input[type="checkbox"] {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  .contact-form .checkbox-group label {
+    font-size: 0.85rem;
   }
 }

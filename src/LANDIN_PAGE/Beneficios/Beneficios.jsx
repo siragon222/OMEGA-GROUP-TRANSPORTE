@@ -13,34 +13,34 @@ import icon_beneficios_6 from '../../assets/icon_beneficios_6.svg';
 const Beneficios = () => {
   const beneficiosData = [
     {
-      image: icon_beneficios_1, // Icono de beneficio 1
-      title: 'Beneficio 1',
-      description: 'Descripción del beneficio 1. Este es un texto de ejemplo para el beneficio.',
+      image: icon_beneficios_5, // Icono de beneficio 1
+      title: 'Seguridad Integral',
+      description: 'Vehículos con última tecnología y mantenimiento riguroso para tu tranquilidad.',
     },
     {
-      image: icon_beneficios_2, // Icono de beneficio 2
-      title: 'Beneficio 2',
-      description: 'Descripción del beneficio 2. Aquí puedes detallar más sobre lo que se ofrece.',
+      image: icon_beneficios_4, // Icono de beneficio 2
+      title: 'Puntualidad Garantizada',
+      description: 'Llega a tu destino a tiempo gracias a nuestra logística avanzada.',
     },
     {
       image: icon_beneficios_3, // Icono de beneficio 3
-      title: 'Beneficio 3',
-      description: 'Descripción del beneficio 3. Continuamos con los ejemplos para ilustrar los servicios.',
+      title: 'Máxima Versatilidad',
+      description: 'Flota variada que se adapta a cualquier necesidad de transporte.',
     },
     {
-      image: icon_beneficios_4, // Icono de beneficio 4
-      title: 'Beneficio 4',
-      description: 'Descripción del beneficio 4. Un texto más para completar el contenido de las tarjetas.',
+      image: icon_beneficios_2, // Icono de beneficio 4
+      title: 'Confort Superior',
+      description: 'Disfruta de un viaje placentero en nuestros vehículos modernos y cómodos.',
     },
     {
-      image: icon_beneficios_5, // Icono de beneficio 5
-      title: 'Beneficio 5',
-      description: 'Descripción del beneficio 5. Próximo beneficio con información relevante para el usuario.',
+      image: icon_beneficios_1, // Icono de beneficio 5
+      title: 'Conductores Profesionales',
+      description: 'Nuestro equipo de conductores es de total confianza y está altamente capacitado.',
     },
     {
       image: icon_beneficios_6, // Icono de beneficio 6
-      title: 'Beneficio 6',
-      description: 'Descripción del beneficio 6. Último beneficio con detalles adicionales.',
+      title: 'Ahorro Inteligente',
+      description: 'Reduce costos operativos con nuestras soluciones de transporte eficientes.',
     },
   ];
 

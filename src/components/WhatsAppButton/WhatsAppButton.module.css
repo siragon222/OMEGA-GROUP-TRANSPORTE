@@ -12,17 +12,38 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.25);
   transition: all 0.3s ease;
   z-index: 1000;
+  overflow: hidden; /* Oculta el texto inicialmente */
 }
 
 .whatsappButton:hover {
   transform: scale(1.1) translateY(-5px);
   box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+  width: 180px; /* Ancho al pasar el ratón */
+  border-radius: 30px; /* Bordes menos redondeados al estirarse */
 }
 
 .icon {
   width: 32px;
   height: 32px;
   fill: white;
+  transition: margin-right 0.3s ease; /* Transición para el icono */
+}
+
+.whatsappButton:hover .icon {
+  margin-right: 10px; /* Espacio entre el icono y el texto al pasar el ratón */
+}
+
+.buttonText {
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.whatsappButton:hover .buttonText {
+  opacity: 1;
 }
 
 /* Animación de pulso */

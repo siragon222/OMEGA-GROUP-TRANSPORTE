@@ -7,8 +7,8 @@
 
 .serviciosGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Ajustado minmax para mejor responsividad */
-  gap: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4rem;
   justify-items: center;
   max-width: 1200px; /* Añadido max-width aquí para centrar el contenido de la grilla */
   margin: 0 auto; /* Centrar la grilla */

@@ -17,20 +17,22 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .portada-slider-container {
-        height: auto; /* Allow height to adjust based on content on mobile */
+        height: 80vh; /* Altura más razonable para móviles */
         min-height: unset; /* Remove minimum height to allow flexible sizing */
         justify-content: center; /* Center single image on mobile */
-        padding-bottom: 90px; /* Increased padding to the bottom */
+        padding-bottom: 0px; /* Increased padding to the bottom */
     }
+
     .slider-title {
-        font-size: var(--font-size-lg); /* Adjust font size for smaller screens */
-        top: 45%; /* Adjust position for smaller screens */
+        top: auto;
+        bottom: 0%; /* Subimos el texto */
+        width: 90%;
     }
 
     /* Mobile carousel styles */
     .image-item-wrapper {
-        width: 80vw !important; /* Force a consistent square width on mobile */
-        height: 80vw !important; /* Force a consistent square height on mobile */
+        width: 80vw !important; /* Ancho ajustado */
+        height: 70vh !important; /* Altura relativa al viewport */
         margin-right: 0; /* Ensure no horizontal separation */
         padding: 0; /* Ensure no padding */
         transform: skewX(0deg); /* Remove any skew on mobile */
@@ -54,6 +56,7 @@
     .portada-slider-image {
         width: 100%; /* Ensure image fills its wrapper */
         height: 100%; /* Ensure image fills its wrapper */
+        object-fit: cover; /* Asegura que la imagen cubra el contenedor sin deformarse */
         transform: skewX(0deg); /* Remove any skew on mobile image */
     }
 }
@@ -80,29 +83,46 @@
 
 @media (max-width: 480px) {
     .portada-slider-container {
-        height: 300px; /* Further adjust height for very small screens */
+        height: 90vh; /* Altura ajustada para pantallas pequeñas */
     }
     .slider-title {
-        font-size: var(--font-size-md); /* Adjust font size for very small screens */
-        top: 50%; /* Further adjust position for very small screens */
+        font-size: 2.5rem; /* Fuente más pequeña y corregida */
+        bottom: -6%; /* Posición ajustada para pantallas pequeñas */
+    }
+
+    .image-item-wrapper {
+        width: 90vw !important;
+        height: 100vh !important;
     }
 }
 
 .slider-title {
     position: absolute;
-    top: 87%; /* Based on previous user adjustment for the box */
+    top: 86%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
-    color: var(--color-white); /* Use global black color */
-    font-family: var(--font-family-roboto); /* Use global font family */
-    font-size: var(--font-size-xl); /* Use global extra large font size */
-    font-weight: 500; /* Use a medium font weight for the title */
+    color: var(--color-white);
+    font-family: var(--font-family-roboto);
+    font-size: clamp(1.7rem, 5vw, 3rem);
+    font-weight: 500;
     text-align: center;
-    width: 90%; /* Based on previous user adjustment for the box */
-    /* Ensure text wraps if needed */
+    width: 90%;
     box-sizing: border-box;
     padding: 10px;
+    opacity: 0;
+    animation: titleFadeIn 1.5s ease-out 0.5s forwards;
+}
+
+@keyframes titleFadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
 }
 
 /* Responsive adjustments for the overlay box */
@@ -123,7 +143,7 @@
 .thin-text {
   font-weight: 300;
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.2rem;
 }
 
 .bold-text {

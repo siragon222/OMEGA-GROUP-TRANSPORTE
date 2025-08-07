@@ -1,0 +1,9 @@
+.red-separator {
+  width: 100vw;
+  height: 10px;
+  background-image: linear-gradient(to right, black, red, black);
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  box-sizing: border-box; /* Asegura que el padding/border no afecte el ancho total */
+}

@@ -17,37 +17,37 @@ const TestimonialsSection = () => {
     {
       id: 1,
       logo: logo1,
-      companyName: 'Empresa 1',
+      companyName: 'Concremack',
       testimonialText: 'Excelente servicio de transporte. Siempre puntuales y profesionales. Recomendamos ampliamente sus servicios para cualquier necesidad logística.'
     },
     {
       id: 2,
       logo: logo2,
-      companyName: 'Empresa 2',
+      companyName: 'Braserv',
       testimonialText: 'Hemos trabajado con Transportes Omega por más de 5 años y su servicio ha sido impecable. Su atención al cliente y eficiencia son incomparables.'
     },
     {
       id: 3,
       logo: logo3,
-      companyName: 'Empresa 3',
+      companyName: 'UT Mantenimiento Estatico VRO',
       testimonialText: 'Gracias a la puntualidad y profesionalismo de Transportes Omega, nuestra cadena de suministro ha mejorado significativamente. Son socios confiables.'
     },
     {
       id: 4,
       logo: logo4,
-      companyName: 'Empresa 4',
+      companyName: 'MANSEL',
       testimonialText: 'La seguridad y cuidado con que manejan nuestra mercancía es excepcional. Definitivamente la mejor opción en servicios de transporte.'
     },
     {
       id: 5,
       logo: logo5,
-      companyName: 'Empresa 5',
+      companyName: 'Discon',
       testimonialText: 'Desde que contratamos a Transportes Omega, nuestros tiempos de entrega se han reducido considerablemente. Un servicio altamente recomendable.'
     },
     {
       id: 6,
       logo: logo6,
-      companyName: 'Empresa 6',
+      companyName: 'Independence',
       testimonialText: 'Su flexibilidad para adaptarse a nuestras necesidades cambiantes ha sido fundamental para nuestro negocio. Excelente equipo y servicio.'
     },
   ];

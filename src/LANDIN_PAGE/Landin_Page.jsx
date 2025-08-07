@@ -7,21 +7,28 @@ import ServiciosDeTransporte from './Servicio_de_Transporte/ServiciosDeTransport
 import VideoPlayer from './Video/VideoPlayer';
 import FormularioSection from './Formulario/FormularioSection';
 import videoGPS from '../assets/video_GPS.mp4';
+import Footer from './Footer/Footer';
+import RedSeparator from '../components/RedSeparator/RedSeparator';
 
-function Landin_Page() {
+const Landin_Page = () => {
   return (
     <div className="landing-page-container">
       <PortadaSlider />
+      <RedSeparator />
       <Beneficios />
       <TestimonialsSection />
       <ServiciosDeTransporte />
+      <RedSeparator />
       <VideoPlayer 
         src={videoGPS} 
         type="video/mp4" 
         autoplay={true}
         muted={true}
       />
+      <RedSeparator />
       <FormularioSection />
+       <RedSeparator />
+      <Footer />
     </div>
   );
 }

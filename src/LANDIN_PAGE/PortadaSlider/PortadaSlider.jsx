@@ -15,8 +15,8 @@ import bg_4 from './bg_4.jpg';
 import bg_5 from './bg_5.jpg';
 
 const PortadaSlider = () => {
-    const images = [car_1, car_2, car_3, car_4, car_5];
-    const backdropImages = [bg_1, bg_2, bg_3, bg_4, bg_5]; // Reemplazamos los colores por imágenes
+    const images = [car_1, car_2, car_3, car_4];
+    const backdropImages = [bg_1, bg_2, bg_3, bg_4]; // Reemplazamos los colores por imágenes
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
     const [currentMobileImageIndex, setCurrentMobileImageIndex] = useState(0);
 
