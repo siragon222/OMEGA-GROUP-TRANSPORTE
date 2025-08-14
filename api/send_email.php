@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 $data = json_decode(file_get_contents('php://input'), true);
 
 // Validar los datos recibidos
-if (!isset($data['name']) || !isset($data['email']) || !isset($data['to_email'])) {
+if (!isset($data['name']) || !isset($data['email']) || !isset($data['phone']) || !isset($data['category']) || !isset($data['to_email'])) {
     http_response_code(400);
     echo json_encode(['error' => 'Faltan datos requeridos']);
     exit;
@@ -23,12 +23,16 @@ if (!isset($data['name']) || !isset($data['email']) || !isset($data['to_email'])
 
 $name = $data['name'];
 $email = $data['email'];
+$phone = $data['phone'];
+$category = $data['category'];
 $to_email = $data['to_email'];
 
 // Configurar el correo
 $subject = 'Nuevo mensaje del formulario de contacto';
 $message = "Nombre: $name\n";
 $message .= "Correo electrónico: $email\n";
+$message .= "Teléfono: $phone\n";
+$message .= "Tipo de servicio: $category\n";
 
 $headers = "From: $email\r\n";
 $headers .= "Reply-To: $email\r\n";
