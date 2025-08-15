@@ -8,27 +8,33 @@ import ServicioIma4 from '../../assets/Servicio_Ima_4.webp';
 const serviciosData = [
   {
     id: 1,
+    imagen: ServicioIma4,
+    titulo: 'Duster ( hasta 4 pasajeros)',
+    descripcion: 'Perfecta para transporte ejecutivo y corporativo: comodidad, discreción y puntualidad.'
+  },
+  {
+    id: 2,
     imagen: ServicioIma1,
     titulo: 'Camionetas Wagon y Doble Cabina 4x4',
     descripcion: 'Perfectas para traslados ejecutivos o rutas rurales. Potencia, versatilidad y comodidad en trayectos exigentes.'
   },
   {
-    id: 2,
-    imagen: ServicioIma2,
-    titulo: 'Buses (30 a 40 pasajeros)',
-    descripcion: 'Máxima capacidad, sin renunciar a la calidad. Perfectos para turismo, eventos o transporte masivo empresarial.'
+    id: 3,
+    imagen: ServicioIma4,
+    titulo: 'Microbuses (8 a 19 pasajeros)',
+    descripcion: 'La opción ideal para grupos pequeños. Comodidad y eficiencia para cada traslado, sin perder cercanía ni control.'
   },
   {
-    id: 3,
+    id: 4,
     imagen: ServicioIma3,
     titulo: 'Buses (20 a 30 pasajeros)',
     descripcion: 'Pensadas para equipos medianos que valoran el espacio, el confort y la puntualidad en cada recorrido.'
   },
   {
-    id: 4,
-    imagen: ServicioIma4,
-    titulo: 'Microbuses (8 a 19 pasajeros)',
-    descripcion: 'La opción ideal para grupos pequeños. Comodidad y eficiencia para cada traslado, sin perder cercanía ni control.'
+    id: 5,
+    imagen: ServicioIma2,
+    titulo: 'Buses (30 a 40 pasajeros)',
+    descripcion: 'Máxima capacidad, sin renunciar a la calidad. Perfectos para turismo, eventos o transporte masivo empresarial.'
   }
 ];
 

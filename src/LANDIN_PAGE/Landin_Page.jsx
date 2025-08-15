@@ -6,7 +6,7 @@ import TestimonialsSection from './Empresas_Comentario/TestimonialsSection';
 import ServiciosDeTransporte from './Servicio_de_Transporte/ServiciosDeTransporte';
 import VideoPlayer from './Video/VideoPlayer';
 import FormularioSection from './Formulario/FormularioSection';
-import videoGPS from '../assets/video_GPS.mp4';
+import videoGPS from '../assets/video_omega.mp4';
 import Footer from './Footer/Footer';
 import RedSeparator from '../components/RedSeparator/RedSeparator';
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import formularioIma from '../../assets/formulario_ima.png';
+import formularioIma from '../../assets/formulario_ima.webp';
 import './FormularioSection.css';
 
 const FormularioSection = () => {
@@ -7,6 +7,8 @@ const FormularioSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [category, setCategory] = useState('');
   const [acceptTerms, setAcceptTerms] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
@@ -38,12 +40,12 @@ const FormularioSection = () => {
     setSubmitMessage('');
 
     try {
-      const response = await fetch('/api/send_email.php', {
+      const response = await fetch('https://tudominio.com/api/send_email.php', { // <--- ¡IMPORTANTE: Cambia 'https://tudominio.com' por tu dominio real!
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ name, email, to_email: 'siragon222@gmail.com' }),
+        body: JSON.stringify({ name, email, phone, category, to_email: 'siragon222@gmail.com' }),
       });
 
       const data = await response.json();
@@ -52,6 +54,8 @@ const FormularioSection = () => {
         setSubmitMessage('¡Formulario enviado con éxito!');
         setName('');
         setEmail('');
+        setPhone('');
+        setCategory('');
         setAcceptTerms(false);
       } else {
         setSubmitMessage('Error al enviar el formulario. Por favor, inténtelo de nuevo.');
@@ -64,7 +68,7 @@ const FormularioSection = () => {
   };
 
   return (
-    <section className="formulario-section" ref={sectionRef}>
+    <section id="formulario" className="formulario-section" ref={sectionRef}>
       <div className={`formulario-container ${isVisible ? 'visible' : ''}`}>
         <div className="image-container">
           <img src={formularioIma} alt="Formulario imagen" />
@@ -90,6 +94,31 @@ const FormularioSection = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
+            </div>
+            <div className="form-group">
+              <label htmlFor="phone">Teléfono</label>
+              <input
+                type="tel"
+                id="phone"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="category">Tipo de servicio</label>
+              <select
+                id="category"
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
+                required
+              >
+                <option value="" disabled hidden>Seleccione una opción</option>
+                <option value="estudiantil">estudiantil</option>
+                <option value="empresarial">empresarial</option>
+                <option value="turistico">turistico</option>
+                <option value="Otros">Otros</option>
+              </select>
             </div>
             <div className="form-group checkbox-group">
               <input

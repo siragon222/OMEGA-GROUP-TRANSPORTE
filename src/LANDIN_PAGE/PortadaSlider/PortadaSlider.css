@@ -2,12 +2,14 @@
 .portada-slider-container {
     position: relative;
     width: 100vw; /* Use 100vw for full viewport width */
-    height: 100vh; /* Full viewport height */
+    height: 820px; /* Fijo: no responde al cambio de altura del viewport */
+    min-height: 820px;
+    max-height: 820px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('./Carretera.png');
+    background-image: url('./Carretera.webp');
     background-color: var(--color-black); 
     background-size: cover; /* Cover the entire container */
     background-position: center; /* Center the background image */
@@ -17,8 +19,10 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .portada-slider-container {
-        height: 80vh; /* Altura más razonable para móviles */
-        min-height: unset; /* Remove minimum height to allow flexible sizing */
+        /* Altura fija también en móvil (no responsivo en eje Y) */
+        height: 720px;
+        min-height: 720px;
+        max-height: 720px;
         justify-content: center; /* Center single image on mobile */
         padding-bottom: 0px; /* Increased padding to the bottom */
     }
@@ -32,7 +36,7 @@
     /* Mobile carousel styles */
     .image-item-wrapper {
         width: 80vw !important; /* Ancho ajustado */
-        height: 70vh !important; /* Altura relativa al viewport */
+        height: 100% !important; /* Llenar la altura fija del contenedor */
         margin-right: 0; /* Ensure no horizontal separation */
         padding: 0; /* Ensure no padding */
         transform: skewX(0deg); /* Remove any skew on mobile */
@@ -83,7 +87,9 @@
 
 @media (max-width: 480px) {
     .portada-slider-container {
-        height: 90vh; /* Altura ajustada para pantallas pequeñas */
+        height: 640px;
+        min-height: 640px;
+        max-height: 640px;
     }
     .slider-title {
         font-size: 2.5rem; /* Fuente más pequeña y corregida */
@@ -92,7 +98,7 @@
 
     .image-item-wrapper {
         width: 90vw !important;
-        height: 100vh !important;
+        height: 100% !important;
     }
 }
 
@@ -149,4 +155,106 @@
 .bold-text {
   font-weight: 700;
   display: block;
+}
+
+/* Overlay container to group title + CTA */
+.slider-overlay {
+  position: absolute;
+  left: 50%;
+  bottom: 1%;
+  transform: translateX(-50%);
+  width: min(92%, 900px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+  z-index: 11;
+  animation: overlayFadeInUp 1s ease-out 0.4s both;
+}
+
+.slider-overlay .slider-title {
+  position: static;
+  top: auto;
+  left: auto;
+  transform: none;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  animation: none;
+}
+
+@keyframes overlayFadeInUp {
+  from { opacity: 0; transform: translate(-50%, 20px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+/* CTA button below images */
+.slider-cta-wrapper {
+  position: static;
+  transform: none;
+  width: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.slider-cta-button {
+  pointer-events: auto;
+  background: var(--color-red, #e10600);
+  color: var(--color-white, #fff) !important;
+  font-family: var(--font-family-roboto);
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  text-decoration: none;
+  padding: 14px 22px;
+  border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease, filter 0.2s ease;
+}
+
+.slider-cta-button:visited,
+.slider-cta-button:focus,
+.slider-cta-button:hover,
+.slider-cta-button:active {
+  color: var(--color-white, #fff) !important;
+  text-decoration: none !important;
+}
+
+.slider-cta-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.3);
+  background: var(--color-red-dark, #c10500);
+}
+
+.slider-cta-button:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+.slider-cta-button:focus-visible {
+  outline: 3px solid rgba(225, 6, 0, 0.4);
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .slider-overlay { bottom: 2%; gap: 12px; width: min(94%, 720px); }
+  .slider-overlay .slider-title { font-size: clamp(1.2rem, 4.5vw, 2rem); }
+  .slider-cta-button {
+    padding: 14px 18px;
+    font-size: 1rem;
+    width: 90%;
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider-overlay { bottom: 2%; gap: 12px; width: 95%; }
+  .slider-overlay .slider-title { font-size: clamp(1.1rem, 5.2vw, 1.8rem); }
+  .slider-cta-button {
+    width: 92%;
+    max-width: 360px;
+    text-align: center;
+    line-height: 1.1;
+  }
 }

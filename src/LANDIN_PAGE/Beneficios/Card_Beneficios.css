@@ -45,8 +45,8 @@
 }
 
 .card-image {
-  width: 80px; /* Adjust as needed */
-  height: 80px; /* Adjust as needed */
+  width: 150px; /* Adjust as needed */
+  height: 150px; /* Adjust as needed */
   margin-bottom: 15px;
 }
 
@@ -69,8 +69,8 @@
   }
 
   .card-image {
-    width: 60px;
-    height: 60px;
+    width: 120px;
+    height: 120px;
   }
 
   .card-title {

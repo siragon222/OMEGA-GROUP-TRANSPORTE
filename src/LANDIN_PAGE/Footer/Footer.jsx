@@ -41,6 +41,10 @@ const Footer = () => {
           <FaMapMarkerAlt />
           <p>KILOMETRO 1-VIA ACACIAS-GUAMAL VDA.EL CENTRO</p>
         </div>
+        <div className="location-info">
+          <FaMapMarkerAlt />
+          <p>Pompeya- Villavicencio manzana D casa 7 barrio villa Saray</p>
+        </div>
         <p>&copy; 2025 Omega group. Todos los derechos reservados.</p>
       </div>
     </footer>

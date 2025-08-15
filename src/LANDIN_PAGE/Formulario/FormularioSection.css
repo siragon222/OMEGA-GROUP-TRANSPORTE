@@ -57,21 +57,56 @@
 }
 
 .contact-form input[type="text"],
-.contact-form input[type="email"] {
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form select {
   width: 100%;
   padding: 0.75rem;
   border: 2px solid #e2e8f0;
   border-radius: 6px;
   font-size: 16px; /* Tamaño fijo para evitar zoom en iOS */
-  transition: border-color 0.3s ease;
+  background-color: #ffffff;
+  color: var(--color-black);
+  caret-color: var(--color-black);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
   -webkit-appearance: none; /* Elimina estilos por defecto en iOS */
   appearance: none;
 }
 
-.contact-form input:focus {
+.contact-form input:focus,
+.contact-form select:focus {
   border-color: var(--color-red);
   outline: none;
   box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.1);
+}
+
+.contact-form input:hover,
+.contact-form select:hover {
+  border-color: #cbd5e1;
+}
+
+.contact-form input::placeholder {
+  color: #94a3b8;
+}
+
+/* Estilo específico para select con flecha personalizada */
+.contact-form select {
+  padding-right: 2.25rem;
+  color: var(--color-black);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M5 7l5 5 5-5' stroke='%2399a3ad' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px 16px;
+}
+
+/* Mientras select es inválido (placeholder seleccionado) */
+.contact-form select:invalid {
+  color: #94a3b8;
+}
+
+/* Asegura que las opciones del desplegable tengan texto visible */
+.contact-form select option {
+  color: var(--color-black);
 }
 
 .contact-form .checkbox-group {
@@ -85,6 +120,7 @@
   width: 1.25rem;
   height: 1.25rem;
   margin-top: 0.25rem;
+  accent-color: var(--color-red);
 }
 
 .contact-form .checkbox-group label {
@@ -119,6 +155,18 @@
   background-color: #cccccc;
   cursor: not-allowed;
   transform: none;
+}
+
+/* Ajustes para autofill (Chrome/Safari) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #0f172a;
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset;
+  box-shadow: 0 0 0px 1000px #ffffff inset;
 }
 
 .submit-message {
@@ -210,5 +258,14 @@
 
   .contact-form .checkbox-group label {
     font-size: 0.85rem;
+  }
+}
+
+/* Respeta la preferencia de reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .image-container,
+  .form-content,
+  .formulario-button {
+    transition: none;
   }
 }

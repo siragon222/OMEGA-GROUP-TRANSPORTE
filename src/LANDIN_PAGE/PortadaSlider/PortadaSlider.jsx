@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import './PortadaSlider.css';
 import SliderImage from './SliderImage';
-import car_1 from './car_1.png';
-import car_2 from './car_2.png';
-import car_3 from './car_3.png';
-import car_4 from './car_4.png';
-import car_5 from './car_5.png';
-import Carretera from './Carretera.png';
+import car_1 from './car_1.webp';
+import car_2 from './car_2.webp';
+import car_3 from './car_3.webp';
+import car_4 from './car_4.webp';
+import car_5 from './car_5.webp';
+import Carretera from './Carretera.webp';
 // Importar las nuevas imágenes de fondo
-import bg_1 from './bg_1.jpg';
-import bg_2 from './bg_2.jpg';
-import bg_3 from './bg_3.jpg';
-import bg_4 from './bg_4.jpg';
-import bg_5 from './bg_5.jpg';
+import bg_1 from './bg_1.webp';
+import bg_2 from './bg_2.webp';
+import bg_3 from './bg_3.webp';
+import bg_4 from './bg_4.webp';
+import bg_5 from './bg_5.webp';
 
 const PortadaSlider = () => {
     const images = [car_1, car_2, car_3, car_4];
@@ -92,10 +92,23 @@ const PortadaSlider = () => {
                         : 'desktop-animate'} 
                 />
             ))}
-            <h1 className="slider-title">
-              <span className="thin-text">Movilizamos tu operación sin fallas:</span>
-              <span className="bold-text">Transporte 100% efectivo</span>
-            </h1>
+            <div className="slider-overlay">
+              <h1 className="slider-title">
+                <span className="thin-text">Movilizamos tu operación sin fallas:</span>
+                <span className="bold-text">Transporte 100% efectivo</span>
+              </h1>
+              <div className="slider-cta-wrapper">
+                <a
+                  href="https://wa.me/573144686437?text=Hola%2C%20quisiera%20solicitar%20una%20cotizaci%C3%B3n%20para%20el%20alquiler%20de%20transporte."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="slider-cta-button"
+                  aria-label="Abrir WhatsApp para solicitar una cotización"
+                >
+                  Solicita tu cotización ¡ahora!
+                </a>
+              </div>
+            </div>
         </div>
     );
 };
