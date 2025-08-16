@@ -34,7 +34,7 @@ $message .= "Correo electrónico: $email\n";
 $message .= "Teléfono: $phone\n";
 $message .= "Tipo de servicio: $category\n";
 
-$headers = "From: Clientes@OmegagroudTransportes.com\r\n";
+$headers = "From: siragon222@gmail.com\r\n";
 $headers .= "Reply-To: $email\r\n";
 $headers .= "X-Mailer: PHP/" . phpversion();
 
