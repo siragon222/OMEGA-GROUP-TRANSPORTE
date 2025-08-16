@@ -39,7 +39,7 @@ const Footer = () => {
       <div className="footer-bottom">
         <div className="location-info"> {/* Ubicación movida aquí */}
           <FaMapMarkerAlt />
-          <p>KILOMETRO 1-VIA ACACIAS-GUAMAL VDA.EL CENTRO</p>
+          <p> km 1 vía Acacias - Guamal  bodega 1 - Colombia</p>
         </div>
         <div className="location-info">
           <FaMapMarkerAlt />

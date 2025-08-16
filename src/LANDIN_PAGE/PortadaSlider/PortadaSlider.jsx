@@ -15,8 +15,8 @@ import bg_4 from './bg_4.webp';
 import bg_5 from './bg_5.webp';
 
 const PortadaSlider = () => {
-    const images = [car_1, car_2, car_3, car_4];
-    const backdropImages = [bg_1, bg_2, bg_3, bg_4]; // Reemplazamos los colores por imágenes
+    const images = [car_1, car_2, car_3, car_4, car_5];
+    const backdropImages = [bg_1, bg_2, bg_3, bg_4, bg_5]; // Reemplazamos los colores por imágenes
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
     const [currentMobileImageIndex, setCurrentMobileImageIndex] = useState(0);
 
@@ -97,17 +97,6 @@ const PortadaSlider = () => {
                 <span className="thin-text">Movilizamos tu operación sin fallas:</span>
                 <span className="bold-text">Transporte 100% efectivo</span>
               </h1>
-              <div className="slider-cta-wrapper">
-                <a
-                  href="https://wa.me/573144686437?text=Hola%2C%20quisiera%20solicitar%20una%20cotizaci%C3%B3n%20para%20el%20alquiler%20de%20transporte."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="slider-cta-button"
-                  aria-label="Abrir WhatsApp para solicitar una cotización"
-                >
-                  Solicita tu cotización ¡ahora!
-                </a>
-              </div>
             </div>
         </div>
     );

@@ -9,6 +9,7 @@ import FormularioSection from './Formulario/FormularioSection';
 import videoGPS from '../assets/video_omega.mp4';
 import Footer from './Footer/Footer';
 import RedSeparator from '../components/RedSeparator/RedSeparator';
+import DescargaFormulario from './descarga_formulario/DescargaFormulario';
 
 const Landin_Page = () => {
   return (
@@ -29,6 +30,7 @@ const Landin_Page = () => {
       <FormularioSection />
        <RedSeparator />
       <Footer />
+      <DescargaFormulario />
     </div>
   );
 }

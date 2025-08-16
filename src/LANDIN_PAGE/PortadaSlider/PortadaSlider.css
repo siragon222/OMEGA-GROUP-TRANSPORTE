@@ -29,7 +29,7 @@
 
     .slider-title {
         top: auto;
-        bottom: 0%; /* Subimos el texto */
+        bottom: 5%; /* Subimos el texto */
         width: 90%;
     }
 
@@ -93,7 +93,7 @@
     }
     .slider-title {
         font-size: 2.5rem; /* Fuente más pequeña y corregida */
-        bottom: -6%; /* Posición ajustada para pantallas pequeñas */
+        bottom: -10%; /* Posición ajustada para pantallas pequeñas */
     }
 
     .image-item-wrapper {
@@ -115,7 +115,7 @@
     text-align: center;
     width: 90%;
     box-sizing: border-box;
-    padding: 10px;
+    padding: 15px;
     opacity: 0;
     animation: titleFadeIn 1.5s ease-out 0.5s forwards;
 }
@@ -161,7 +161,7 @@
 .slider-overlay {
   position: absolute;
   left: 50%;
-  bottom: 1%;
+  bottom: 5%;
   transform: translateX(-50%);
   width: min(92%, 900px);
   display: flex;
@@ -238,8 +238,8 @@
 }
 
 @media (max-width: 768px) {
-  .slider-overlay { bottom: 2%; gap: 12px; width: min(94%, 720px); }
-  .slider-overlay .slider-title { font-size: clamp(1.2rem, 4.5vw, 2rem); }
+  .slider-overlay { bottom: 7%; gap: 12px; width: min(94%, 720px); }
+  .slider-overlay .slider-title { font-size: clamp(1.7rem, 4.5vw, 2rem); }
   .slider-cta-button {
     padding: 14px 18px;
     font-size: 1rem;
@@ -249,7 +249,7 @@
 }
 
 @media (max-width: 480px) {
-  .slider-overlay { bottom: 2%; gap: 12px; width: 95%; }
+  .slider-overlay { bottom: 7%; gap: 12px; width: 95%; }
   .slider-overlay .slider-title { font-size: clamp(1.1rem, 5.2vw, 1.8rem); }
   .slider-cta-button {
     width: 92%;

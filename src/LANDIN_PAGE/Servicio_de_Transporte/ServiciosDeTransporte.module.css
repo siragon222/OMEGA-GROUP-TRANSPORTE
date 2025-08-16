@@ -5,6 +5,21 @@
   background-color: var(--color-white);
 }
 
+.sectionTitle {
+  text-align: center;
+  font-size: var(--font-size-xl);
+  color: var(--color-black);
+  margin-bottom: 30px;
+  font-family: var(--font-family-roboto);
+}
+
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: var(--font-size-lg);
+    margin-bottom: 20px;
+  }
+}
+
 .serviciosGrid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -116,4 +131,26 @@
     background-color: #f9f9f9;
     color: var(--color-black);
   }
+}
+
+.ctaWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.ctaButton {
+  background-color: #FF0000; /* Example red color */
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: var(--font-size-lg);
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.ctaButton:hover {
+  background-color: #CC0000; /* Darker red on hover */
+  color: white;
 }

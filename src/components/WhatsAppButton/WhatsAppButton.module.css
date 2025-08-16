@@ -80,8 +80,8 @@
 }
 .whatsappButton {
   position: fixed;
-  bottom: 40px;  /* Distancia desde la parte inferior */
-  right: 40px;   /* Distancia desde la derecha */
+  bottom: 15px;  /* Distancia desde la parte inferior */
+  right: 15px;   /* Distancia desde la derecha */
   background-color: #25d366;
   width: 60px;
   height: 60px;

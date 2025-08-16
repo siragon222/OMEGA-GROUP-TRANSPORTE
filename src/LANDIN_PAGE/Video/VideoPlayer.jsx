@@ -1,9 +1,11 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import styles from './VideoPlayer.module.css';
 import videoGPS from '../../assets/video_omega.mp4';
 
 const VideoPlayer = ({ src = videoGPS, type = 'video/mp4' }) => {
   const videoRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [showOverlay, setShowOverlay] = useState(true);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -15,26 +17,12 @@ const VideoPlayer = ({ src = videoGPS, type = 'video/mp4' }) => {
       threshold: 0.5, // Trigger when 50% of the video is visible
     };
 
-    // Intenta reproducir con sonido; si es bloqueado, hace fallback a muted autoplay
-    const handlePlayAttempt = async () => {
-      try {
-        // intenta reproducir tal cual (con sonido)
-        await video.play();
-      } catch (err) {
-        // si autoplay con sonido es bloqueado por el navegador, reproducir silenciado
-        try {
-          video.muted = true;
-          await video.play();
-        } catch (err2) {
-          // si también falla, no hacemos nada (evitar errores en consola)
-        }
-      }
-    };
-
     const callback = (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          handlePlayAttempt();
+          if (isPlaying) {
+            video.play();
+          }
         } else {
           video.pause();
         }
@@ -45,23 +33,51 @@ const VideoPlayer = ({ src = videoGPS, type = 'video/mp4' }) => {
     observer.observe(video);
 
     return () => {
-      // limpiar observer de forma segura
-      observer.disconnect();
+      observer.unobserve(video);
     };
-  }, [src]);
+  }, [src, isPlaying]);
+
+  const handlePlayToggle = () => {
+    const video = videoRef.current;
+    if (video) {
+      if (isPlaying) {
+        video.pause();
+      } else {
+        video.play();
+      }
+      setIsPlaying(!isPlaying);
+      setShowOverlay(false);
+    }
+  };
+
+  const handleVideoEnd = () => {
+    setIsPlaying(false);
+    setShowOverlay(true);
+  };
 
   return (
     <div className={styles.videoContainer}>
       <video
         ref={videoRef}
         className={styles.videoPlayer}
+        src={src}
+        type={type}
         loop
         playsInline
-        preload="metadata"
-      >
-        <source src={src} type={type} />
-        Tu navegador no soporta video HTML5.
-      </video>
+        muted={!isPlaying} // Mute video if not playing
+        onClick={handlePlayToggle} // Toggle play/pause on video click
+        onEnded={handleVideoEnd}
+      />
+      {showOverlay && (
+        <div className={styles.videoOverlay} onClick={handlePlayToggle}>
+          <button className={styles.unmuteButton}>
+            <svg className={styles.playIcon} viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+            Reproducir Video
+          </button>
+        </div>
+      )}
     </div>
   );
 };
